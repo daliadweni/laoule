@@ -1,0 +1,302 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> La où Le ? </title>
+
+	<!-- Koukicons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/one-page-wonder.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"><i class="fa fa-cookie"></i> La où Le ?</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"><i class="fa fa-home"></i>&nbsp; Acceuil
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+			
+    
+		    <li class="nav-item">
+              <a class="nav-link" id="searchlink" href="#"><i class="fa fa-search"></i>&nbsp; Recherche</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="aboutlink"  href="#"><i class="fa fa-info"></i>&nbsp; à-propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="contactlink"  href="#"><i class="fa fa-envelope"></i>&nbsp; Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead">
+	
+      <div class="overlay">
+        <div class="container">
+		  <img class="img-responsive" src="books.png" width="19%"></img>
+		  <br>
+          <h1 style="display:inline-block !important;" class="display-1 text-white">La où Le ?</h1> <p align="right" style="display:inline-block !important;" class="text-white">V 1.0</p>
+		  
+          <h2 class="display-4 text-white">est un service de vérification automatique développé par Med Ali Adweni<h2>
+        </div>
+      </div>
+    </header>
+	
+	<br id="start" >
+	<section class="container">
+		<div  id="search" class="row align-items-center">
+
+
+      
+			 <div class="col-md-12 ">
+				<div class="p-5">
+          <center>
+                    <input class="form-control" type="text" id="word">
+                    <button  onclick="get()" class="button" >Verifier  <i class="fa  fa-search "></i></button>
+          </center>
+
+				</div>
+				
+			 </div>
+		</div>
+	</section>
+	
+	
+	
+	
+  <section>
+    <div  class="container">
+  <br>
+      <div class="row align-items-center">
+
+        <div class="col-md-12 ">
+          <div class="">
+    <div class="p-5">
+           <center> <h2 id="resultat" class="display-4"></h2>  </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+	
+	
+	
+	
+	
+	
+	
+	
+
+ 
+<br id="about"><br><br>
+    <section >
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="books.png" alt="">
+			 
+            </div>
+          </div>
+		  <br>
+          <div  class="col-md-6">
+            <div class="p-5">
+              <h2 class="display-4">La où Le ?</h2>
+              <p><br> Application web  ? <br>
+                est un service de vérification automatique développé par Med Ali Adweni
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+	
+	
+	<br id="contact">
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 order-2">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="contact.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-6 order-1">
+            <div class="p-5">
+              <h2 class="display-4">Contactez moi!</h2>
+              <p> <h2> <i class="fa fa-facebook"></i>  <a href="https://www.facebook.com/mouhamedali.adweni.9/">Mohamed Ali Adweni</a> </h2> </p>
+			  <p> <h2> <i class="fa fa-envelope"></i>  <a href="mailto:mouhamedaliadoinii@gmail.com">mouhamedaliadoinii@gmail.com </a> </h2> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-primary">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Med Ali Adweni 2022</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+<script src='script.js'></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+		  
+		  
+		  
+		  
+		
+		  
+		  
+		  
+		  
+		  $(function() {
+				 
+				  function htmlEncode(value){
+					//create a in-memory div, set it's inner text(which jQuery automatically encodes)
+					//then grab the encoded contents back out.  The div never exists on the page.
+					return $('<div/>').text(value).html();
+				  }
+
+
+
+
+
+				  function isElementMatching(element, needle) {
+					var alternative = element.attr("alt");
+					return ($(element).text().toLowerCase().indexOf(needle) >= 0) ||
+					  (alternative != null && alternative.toLowerCase().indexOf(needle) >= 0);
+				  }
+
+				  function highlightElements(needle) {
+					if (needle.length == 0) {
+					  highlightAll();
+					  return;
+					}
+					needle = needle.toLowerCase();
+					$(".row .col-md-3").each(function (index, el) {
+					  if (isElementMatching($(el), needle)) {
+						$(el).show();
+					  } else {
+						$(el).hide();
+					  }
+					});
+				  }
+
+				  function highlightAll() {
+					$(".row .col-md-3").show();
+				  }
+
+				  $("#searchbar").keyup(function(e) {
+					if (e.keyCode == 27) { // ESC
+					  $(this).val('').blur();
+					  highlightAll();
+					}
+				  });
+				  $("#searchbar").on("change paste keyup", function() {
+					highlightElements($("#searchbar").val());
+				  });
+				  $("#searchbar").focus();
+});
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+					 $(".button").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#start").offset().top
+					}, 1000);
+				});
+		  
+				  	 $("#startlink").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#start").offset().top
+					}, 1000);
+				});
+		    
+		  
+		  					 $("#searchlink").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#search").offset().top
+					}, 1000);
+				});
+		  
+		  
+			  					 $("#aboutlink").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#about").offset().top
+					}, 1000);
+				});	  
+		  
+		  
+				  					 $("#contactlink").click(function() {
+					$('html, body').animate({
+						scrollTop: $("#contact").offset().top
+					}, 1000);
+				});	 	  
+		  
+		  
+		  
+		  
+		  
+		  </script>
+  </body>
+
+</html>
